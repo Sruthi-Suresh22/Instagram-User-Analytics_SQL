@@ -42,6 +42,14 @@ FROM users
 ORDER BY created_at 
 LIMIT 5;
 ```
+Result:
+| Id | Top 5 Loyal Users | Joined Instagram at |
+|----|-------------------|---------------------|
+| 80 | Darby_Herzog      | 2016-05-06 00:14:21 |
+| 67 | Emilio_Bernier52  | 2016-05-06 13:04:30 |
+| 63 | Elenor88          | 2016-05-08 01:30:41 |
+| 95 | Nicole71          | 2016-05-09 17:30:22 |
+| 38 | Jordyn.Jacobson2  | 2016-05-14 07:56:26 |
 
 - Inactive User Engagement:
 
@@ -53,6 +61,36 @@ FROM users
 LEFT JOIN photos ON users.id = photos.user_id 
 WHERE photos.user_id IS NULL;
 ```
+Result:
+| Id | List of Inactive Users |
+|----|------------------------|
+| 5  | Aniya_Hackett          |
+| 7  | Kasandra_Homenick      |
+| 14 | Jaclyn81               |
+| 21 | Rocio33                |
+| 24 | Maxwell.Halvorson      |
+| 25 | Tierra.Trantow         |
+| 34 | Pearl7                 |
+| 36 | Ollie_Ledner37         |
+| 41 | Mckenna17              |
+| 45 | David.Osinski47        |
+| 49 | Morgan.Kassulke        |
+| 53 | Linnea59               |
+| 54 | Duane60                |
+| 57 | Julien_Schmidt         |
+| 66 | Mike.Auer39            |
+| 68 | Franco_Keebler64       |
+| 71 | Nia_Haag               |
+| 74 | Hulda.Macejkovic       |
+| 75 | Leslie67               |
+| 76 | Janelle.Nikolaus81     |
+| 80 | Darby_Herzog           |
+| 81 | Esther.Zulauf61        |
+| 83 | Bartholome.Bernhard    |
+| 89 | Jessyca_West           |
+| 90 | Esmeralda.Mraz57       |
+| 91 | Bethany20              |
+
 - Contest Winner Declaration:
 
 Query:
@@ -66,6 +104,11 @@ GROUP BY photos.id
 ORDER BY Total_Likes DESC
 LIMIT 1;
 ```
+Result:
+| Name of the Winner | Id | Image URL           | Total_Likes |
+|--------------------|----|---------------------|-------------|
+| Zack_Kemmer93      | 52 | https://jarret.name | 48          |
+
 - Hashtag Research:
 
 Query:
@@ -77,6 +120,16 @@ GROUP BY tag_name
 ORDER BY Total_Count DESC 
 LIMIT 5;
 ```
+Result:
+
+| Tag Id | Hashtag Name | Total_Count |
+|--------|--------------|-------------|
+| 21     | smile        | 59          |
+| 20     | beach        | 42          |
+| 17     | party        | 39          |
+| 13     | fun          | 38          |
+| 18     | concert      | 24          |
+
 - Ad Campaign Launch:
 
 Query:
@@ -87,6 +140,17 @@ FROM users
 GROUP BY DAYNAME(created_at) 
 ORDER BY Number_of_users_registered DESC;
 ```
+Result:
+| Day       | Number_of_users_registered |
+|-----------|----------------------------|
+| Thursday  | 16                         |
+| Sunday    | 16                         |
+| Friday    | 15                         |
+| Tuesday   | 14                         |
+| Monday    | 14                         |
+| Wednesday | 13                         |
+| Saturday  | 12                         |
+
 #### (B) Investor Metrics:
 - User Engagement:
 
@@ -94,22 +158,39 @@ Query:
 ```sql
 SELECT COUNT(id) AS "Total No. of Photos on Instagram" FROM photos;
 ```
+| Total No. of Photos on Instagram |
+|----------------------------------|
+| 257                              |
+
 ```sql
 SELECT COUNT(id) AS "Total No. of Users on Instagram" FROM users;
 ```
+| Total No. of Users on Instagram  |
+|----------------------------------|
+| 100                              |
 ```sql
 SELECT COUNT(DISTINCT(user_id)) AS "Total No. of Active Users" FROM photos;
 ```
+| Total No. of Active Users  |
+|----------------------------|
+| 74                         |
 ```sql
 SELECT 
 ROUND((SELECT COUNT(id) AS "Total No. of Photos on Instagram" FROM photos)/(SELECT COUNT(id) AS "Total No. of Users on Instagram" FROM users),2) 
 AS "Total No. of Photos / Total No. of Users on Instagram";
 ```
+| Total No. of Photos / Total No. of Users on Instagram  |
+|--------------------------------------------------------|
+| 2.57                                                   |
 ```sql
 SELECT AVG(posts_per_user) AS Average_posts_per_user
 FROM (SELECT COUNT(*) AS posts_per_user FROM photos GROUP BY user_id) 
 AS user_posts_count;
 ```
+| Average_posts_per_user  |
+|-------------------------|
+| 3.4730                  |
+
 - Bots & Fake Accounts:
 
 Query:
@@ -120,3 +201,20 @@ FROM users JOIN likes ON users.id = likes.user_id
 GROUP BY users.id 
 HAVING COUNT(DISTINCT(likes.photo_id)) = (SELECT COUNT(*) FROM photos);
 ```
+Result: 
+
+| Id | Username           | Overall Likes Count |
+|----|--------------------|---------------------|
+| 5  | Aniya_Hackett      | 257                 |
+| 14 | Jaclyn81           | 257                 |
+| 21 | Rocio33            | 257                 |
+| 24 | Maxwell.Halvorson  | 257                 |
+| 36 | Ollie_Ledner37     | 257                 |
+| 41 | Mckenna17          | 257                 |
+| 54 | Duane60            | 257                 |
+| 57 | Julien_Schmidt     | 257                 |
+| 66 | Mike.Auer39        | 257                 |
+| 71 | Nia_Haag           | 257                 |
+| 75 | Leslie67           | 257                 |
+| 76 | Janelle.Nikolaus81 | 257                 |
+| 91 | Bethany20          | 257                 |
