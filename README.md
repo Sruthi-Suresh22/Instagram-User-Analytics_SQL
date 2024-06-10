@@ -4,12 +4,8 @@
 
 - [Project Description](#project-description)
 - [Dataset Details](#dataset-details)
-- [Task Details](#task-details)
-  - [(A) Marketing Analysis](#(a)-marketing-analysis)
-  - [(B) Investor Metrics](#(b)-investing-metrics)
+- [Tasks](#tasks)
 - [Insights](#insights)
-  - [(A) Marketing Analysis](#(a)-marketing-analysis)
-  - [(B) Investor Metrics](#(b)-investing-metrics)
 - [Conclusion](#conclusion)
 
 ### Project Description
@@ -28,7 +24,7 @@ As a data analyst working with the product team at Instagram, this project invol
 - Table **photo_tags** consists of 501 records with the columns: `photo_id`, `tag_id`.
 - Table **tags** consists of 21 records having the hashtag details with the columns: `id`, `tag_name`, `created_at`.
 
-### Tasks Details 
+### Tasks 
 
 #### (A) Marketing Analysis
 1. **Loyal User Reward:** To identify the five oldest users on Instagram as the marketing team wants to reward the most loyal users, i.e., those who have been using the platform for the longest time.
