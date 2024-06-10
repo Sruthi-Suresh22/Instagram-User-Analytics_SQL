@@ -1,5 +1,16 @@
 # 1. INSTAGRAM USER ANALYTICS
 
+### Table of Contents
+- [Project Description](project_description)
+- [Dataset Details](dataset_details)
+- [Task Details](task_details)
+  - [(A)Marketing Analysis]((a)marketing_analysis)
+  - [(B)Investor Metrics](investing_metrics)
+- [Insights](insights)
+   - [(A)Marketing Analysis]((a)marketing_analysis)
+   - [(B)Investor Metrics]((b)investing_metrics)
+- [Conclusion](conclusion)
+
 ### Project Description :
 
 This project intends to conduct an extensive analysis of the user engagement process with one of the world's most popular social media platforms : Instagram. User analysis involves tracking how users engage with a digital product, such as a software application or a mobile app. The insights derived from this analysis can be used by various teams within the business. For example, the marketing team might use these insights to launch a new campaign, the product team might use them to decide on new features to build, and the development team might use them to improve the overall user experience.
@@ -42,7 +53,8 @@ FROM users
 ORDER BY created_at 
 LIMIT 5;
 ```
-Result:
+Result: The top 5 Loyal Users i.e., the oldest users who will get the rewards are as follows:
+ 
 | Id | Top 5 Loyal Users | Joined Instagram at |
 |----|-------------------|---------------------|
 | 80 | Darby_Herzog      | 2016-05-06 00:14:21 |
@@ -61,7 +73,8 @@ FROM users
 LEFT JOIN photos ON users.id = photos.user_id 
 WHERE photos.user_id IS NULL;
 ```
-Result:
+Result: There are 26 users who have never posted a single photo on Instagram.
+
 | Id | List of Inactive Users |
 |----|------------------------|
 | 5  | Aniya_Hackett          |
@@ -104,7 +117,8 @@ GROUP BY photos.id
 ORDER BY Total_Likes DESC
 LIMIT 1;
 ```
-Result:
+Result: The winner of the contest who is having most likes for a single photo is Zack_Kemmer93.
+
 | Name of the Winner | Id | Image URL           | Total_Likes |
 |--------------------|----|---------------------|-------------|
 | Zack_Kemmer93      | 52 | https://jarret.name | 48          |
@@ -120,7 +134,7 @@ GROUP BY tag_name
 ORDER BY Total_Count DESC 
 LIMIT 5;
 ```
-Result:
+Result: The top five most commonly used hashtags on the platform are as follows:
 
 | Tag Id | Hashtag Name | Total_Count |
 |--------|--------------|-------------|
@@ -140,7 +154,8 @@ FROM users
 GROUP BY DAYNAME(created_at) 
 ORDER BY Number_of_users_registered DESC;
 ```
-Result:
+Result: The best day of the week to launch ads will be Thursday & Sunday as inferred from the result.
+
 | Day       | Number_of_users_registered |
 |-----------|----------------------------|
 | Thursday  | 16                         |
@@ -191,6 +206,8 @@ AS user_posts_count;
 |-------------------------|
 | 3.4730                  |
 
+Result: There are 100 users out of which there are 74 Active users who have posted atleast once. Average user posts around 3 - 4 times as inferred from the data.
+
 - Bots & Fake Accounts:
 
 Query:
@@ -201,7 +218,7 @@ FROM users JOIN likes ON users.id = likes.user_id
 GROUP BY users.id 
 HAVING COUNT(DISTINCT(likes.photo_id)) = (SELECT COUNT(*) FROM photos);
 ```
-Result: 
+Result: There are 13 users (potential bots) who have liked every single photo on the site, as this is not typically possible for a normal user which account for 13% of the total users and they are as follows:
 
 | Id | Username           | Overall Likes Count |
 |----|--------------------|---------------------|
@@ -218,3 +235,7 @@ Result:
 | 75 | Leslie67           | 257                 |
 | 76 | Janelle.Nikolaus81 | 257                 |
 | 91 | Bethany20          | 257                 |
+
+### Conclusion:
+The insights drawn from Instagram User Analytics project focusing on the Marketing and Investor Metrics have helped in understanding and extracting valuable information such as the most loyal users, top 5 most used hashtags, the best day of the week to launch ads and to identify the bots and fake accounts etc., could possibly help in the potential development and progress of one of the most popular social media platform Instagram. This analysis could help in making data-driven decisions, whether the platform is growing or became stagnant in its growth etc., by extracting meaningful insights from the data using SQL and MySQL Workbench tool.
+
