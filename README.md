@@ -1,15 +1,15 @@
 # 1. INSTAGRAM USER ANALYTICS
 
 ### Table of Contents
-- [Project Description](project-description)
-- [Dataset Details](dataset-details)
-- [Task Details](task-details)
-  - [(A)Marketing Analysis]((a)marketing-analysis)
-  - [(B)Investor Metrics](investing-metrics)
-- [Insights](insights)
-   - [(A)Marketing Analysis]((a)marketing-analysis)
-   - [(B)Investor Metrics]((b)investing-metrics)
-- [Conclusion](conclusion)
+- [Project Description](#project-description)
+- [Dataset Details](#dataset-details)
+- [Task Details](#task-details)
+  - [(A)Marketing Analysis](#(a)marketing-analysis)
+  - [(B)Investor Metrics](#investing-metrics)
+- [Insights](#insights)
+   - [(A)Marketing Analysis](#(a)marketing-analysis)
+   - [(B)Investor Metrics](#(b)investing-metrics)
+- [Conclusion](#conclusion)
 
 ### Project Description :
 
