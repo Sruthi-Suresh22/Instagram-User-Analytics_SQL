@@ -1,4 +1,4 @@
-# 1. INSTAGRAM USER ANALYTICS
+# INSTAGRAM USER ANALYTICS
 
 ### Table of Contents
 
