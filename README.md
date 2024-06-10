@@ -2,22 +2,22 @@
 
 ### Table of Contents
 
-- [Project Description](#project-description-:)
-- [Dataset Details](#dataset-details-:)
-- [Task Details](#task-details-:)
-  - [(A) Marketing Analysis](#(a)-marketing-analysis-:)
-  - [(B) Investor Metrics](#(b)-investing-metrics-:)
-- [Insights](#insights-:)
-   - [(A) Marketing Analysis](#(a)-marketing-analysis-:)
-   - [(B) Investor Metrics](#(b)-investing-metrics-:)
-- [Conclusion](#conclusion-:)
+- [Project Description](#project-description)
+- [Dataset Details](#dataset-details)
+- [Task Details](#task-details)
+  - [(A) Marketing Analysis](#(a)marketinganalysis)
+  - [(B) Investor Metrics](#(b)-investing-metrics)
+- [Insights](#insights)
+  - [(A) Marketing Analysis](#(a)-marketing-analysis)
+  - [(B) Investor Metrics](#(b)-investing-metrics)
+- [Conclusion](#conclusion)
 
-### Project Description :
+### Project Description
 
 This project intends to conduct an extensive analysis of the user engagement process with one of the world's most popular social media platforms : Instagram. User analysis involves tracking how users engage with a digital product, such as a software application or a mobile app. The insights derived from this analysis can be used by various teams within the business. For example, the marketing team might use these insights to launch a new campaign, the product team might use them to decide on new features to build, and the development team might use them to improve the overall user experience.
 As a data analyst working with the product team at Instagram, this project involves analyzing user interactions and engagement with the Instagram app to provide valuable insights that can help the business grow.
 
-### Dataset Details :
+### Dataset Details
 
 #### There are total 7 csv files : users, photos, comments, likes, follows, photo_tags and tags.
 - Table **users** consists of 100 records having the details of the Instagram users with the columns : `id`, `username`, `created_at`.
@@ -28,22 +28,22 @@ As a data analyst working with the product team at Instagram, this project invol
 - Table **photo_tags** consists of 501 records with the columns: `photo_id`, `tag_id`.
 - Table **tags** consists of 21 records having the hashtag details with the columns: `id`, `tag_name`, `created_at`.
 
-### Tasks Details: 
+### Tasks Details 
 
-#### (A) Marketing Analysis:
+#### (A) Marketing Analysis
 1. **Loyal User Reward:** To identify the five oldest users on Instagram as the marketing team wants to reward the most loyal users, i.e., those who have been using the platform for the longest time.
 2. **Inactive User Engagement:** To identify users who have never posted a single photo on Instagram as the team wants to encourage inactive users to start posting by sending them promotional emails.
 3. **Contest Winner Declaration:** To determine the winner of the contest and provide their details to the team as the team have organized a contest where the user with the most likes on a single photo wins.
 4. **Hashtag Research:** To identify the top five most commonly used hashtags on the platform as a partner brand wants to know the most popular hashtags to use in their posts to reach the most people.
 5. **Ad Campaign Launch:** To determine the day of the week when most users register on Instagram as the team wants to know the best day of the week to launch ads.
 
-#### (B) Investor Metrics:
+#### (B) Investor Metrics
 1. **User Engagement:** To calculate the average number of posts per user on Instagram. Also, provide the total number of photos on Instagram divided by the total number of users as the Investors want to know if users are still active and posting on Instagram or if they are making fewer posts.
 2. **Bots & Fake Accounts:** To identify users (potential bots) who have liked every single photo on the site, as this is not typically possible for a normal user as the Investors want to know if the platform is crowded with fake and dummy accounts.
 
-### Insights:
+### Insights
 
-#### (A) Marketing Analysis:
+#### (A) Marketing Analysis
 - Loyal User Reward:
   
 Query:
@@ -167,7 +167,7 @@ Result: The best day of the week to launch ads will be Thursday & Sunday as infe
 | Wednesday | 13                         |
 | Saturday  | 12                         |
 
-#### (B) Investor Metrics:
+#### (B) Investor Metrics
 - User Engagement:
 
 Query:
@@ -237,6 +237,6 @@ Result: There are 13 users (potential bots) who have liked every single photo on
 | 76 | Janelle.Nikolaus81 | 257                 |
 | 91 | Bethany20          | 257                 |
 
-### Conclusion:
+### Conclusion
 The insights drawn from Instagram User Analytics project focusing on the Marketing and Investor Metrics have helped in understanding and extracting valuable information such as the most loyal users, top 5 most used hashtags, the best day of the week to launch ads and to identify the bots and fake accounts etc., could possibly help in the potential development and progress of one of the most popular social media platform Instagram. This analysis could help in making data-driven decisions, whether the platform is growing or became stagnant in its growth etc., by extracting meaningful insights from the data using SQL and MySQL Workbench tool.
 
